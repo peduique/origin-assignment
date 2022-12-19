@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from 'react';
+import React, { ChangeEvent, useEffect, useRef, useState } from 'react';
 
 import Summary from '../../organisms/SavingGoalsSummary';
 import AmountField from '../../molecules/AmountField';
@@ -17,10 +17,25 @@ import {
   SFormHeaderText,
   SFields,
 } from './styles';
+import useKeyPress from '../../../hooks/useKeyPress';
 
 const SavingGoals: React.FC = () => {
+  const inputRef = useRef<HTMLInputElement>(null);
   const [amount, setAmount] = useState<string | number>(25000);
   const { date, handleMonthChange } = useDate();
+
+  useKeyPress({
+    keys: ['ArrowLeft', 'ArrowRight'],
+    callback: (ev: KeyboardEvent) => {
+      if (ev.target !== inputRef.current) {
+        handleMonthChange(ev.key === 'ArrowLeft' ? 'prev' : 'next');
+      }
+    },
+  });
+
+  useEffect(() => {
+    inputRef.current?.focus();
+  }, []);
 
   return (
     <SWrapper>
@@ -39,6 +54,7 @@ const SavingGoals: React.FC = () => {
 
         <SFields>
           <AmountField
+            ref={inputRef}
             label="Total amount"
             value={amount}
             placeholder="Amount"

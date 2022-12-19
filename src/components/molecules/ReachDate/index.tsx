@@ -1,4 +1,3 @@
-import React from 'react';
 import Label from '../../atoms/Label';
 
 import { ReactComponent as IconLeftArrow } from '../../../assets/icons/icon-arrow-left.svg';
@@ -19,7 +18,7 @@ const ReachDate: React.FC<ReachDateProps> = ({
   return (
     <SContainer>
       <Label label={label} />
-      <SFieldWrapper>
+      <SFieldWrapper tabIndex={1}>
         <SButton
           onClick={() => onClickChangeDate('prev')}
           disabled={todayFormatted === formatted}

@@ -13,6 +13,10 @@ export const SFieldWrapper = styled.div`
   min-height: 56px;
   border-radius: 4px;
   padding: 3px 15px;
+
+  &:focus-within {
+    outline: 2px solid #1b30a8;
+  }
 `;
 
 export const SButton = styled(Button)`
@@ -21,6 +25,10 @@ export const SButton = styled(Button)`
   padding: 5px;
   color: #8a9ca9;
   cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
 `;
 
 export const SText = styled(Typograph)`

@@ -20,6 +20,10 @@ export const SInput = styled(NumericFormat)`
   ${SPrefixWrapper} & {
     padding-left: 40px;
   }
+
+  &:focus {
+    outline: 2px solid #1b30a8;
+  }
 `;
 
 export const SPrefix = styled.span`
