@@ -19,7 +19,7 @@ import {
 } from './styles';
 
 const SavingGoals: React.FC = () => {
-  const [amount, setAmount] = useState<string | number>('');
+  const [amount, setAmount] = useState<string | number>(25000);
   const { date, handleMonthChange } = useDate();
 
   return (
