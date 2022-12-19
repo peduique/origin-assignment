@@ -27,7 +27,7 @@ const SavingGoalsSummary: React.FC<SummaryProps> = ({ amount, date }) => {
       </SHeader>
       <SContent>
         You&apos;re planning <strong>{months} monthly deposits</strong> to reach
-        your <strong>{amount}</strong> goal by{' '}
+        your <strong>{getFormattedValue(Number(rawAmount))}</strong> goal by{' '}
         <strong>
           {month} {year}.
         </strong>
