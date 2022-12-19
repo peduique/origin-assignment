@@ -1,6 +1,6 @@
 import React, { ChangeEvent, useState } from 'react';
 
-import Summary from '../../organisms/Summary';
+import Summary from '../../organisms/SavingGoalsSummary';
 import AmountField from '../../molecules/AmountField';
 import ReachDate from '../../molecules/ReachDate';
 import { ReactComponent as CurrencyIcon } from '../../../assets/icons/icon-currency.svg';
@@ -18,7 +18,7 @@ import {
   SFields,
 } from './styles';
 
-const Content: React.FC = () => {
+const SavingGoals: React.FC = () => {
   const [amount, setAmount] = useState<string | number>('');
   const { date, handleMonthChange } = useDate();
 
@@ -62,4 +62,4 @@ const Content: React.FC = () => {
   );
 };
 
-export default Content;
+export default SavingGoals;

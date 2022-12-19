@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './components/molecules/Header';
-import Content from './components/templates/Content';
+import SavingGoals from './components/templates/SavingGoals';
 import GlobalStyle from './globalStyles';
 
 export function App(): JSX.Element {
@@ -8,7 +8,7 @@ export function App(): JSX.Element {
     <>
       <GlobalStyle />
       <Header />
-      <Content />
+      <SavingGoals />
     </>
   );
 }

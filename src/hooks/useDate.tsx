@@ -1,7 +1,12 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { getNextMonth } from '../utils/dateHelper';
 
-export const useDate = () => {
+interface UseDateProps {
+  date: Date;
+  handleMonthChange: (type: string) => void;
+}
+
+export const useDate = (): UseDateProps => {
   const [date, setDate] = useState(new Date());
 
   const handleMonthChange = (type: string) => {

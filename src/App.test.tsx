@@ -1,7 +1,7 @@
 import { shallow } from 'enzyme';
 import { App } from './App';
 import { render } from '@testing-library/react';
-import Content from './components/templates/Content';
+import Content from './components/templates/SavingGoals';
 
 describe('App', () => {
   describe('using enzyme', () => {

@@ -1,21 +1,21 @@
 import { render, fireEvent, waitFor } from '@testing-library/react';
-import Content from '../';
+import SavingGoals from '..';
 import { getFormattedValue } from '../../../../utils/numberFormatHelper';
 
 describe('Saving goals', () => {
   it('should render successfully', () => {
-    const { getByText, getByTestId } = render(<Content />);
+    const { getByText, getByTestId } = render(<SavingGoals />);
 
     expect(getByText(/Buy a house/i)).toBeInTheDocument();
     expect(getByTestId('amount')).toBeInTheDocument();
     expect(getByText(/Reach goal by/i)).toBeInTheDocument();
   });
 
-  it('should', async () => {
+  it('should be able to test saving goals form', async () => {
     const newValue = 25000;
     const clickTimes = 5;
 
-    const { getByTestId, getByText } = render(<Content />);
+    const { getByTestId, getByText } = render(<SavingGoals />);
     const input = getByTestId('amount');
     const nextDate = getByTestId('next-date');
     const amount = newValue / clickTimes;

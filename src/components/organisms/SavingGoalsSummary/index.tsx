@@ -11,7 +11,7 @@ import {
 import { SContainer, SHeader, SContent, SPrice } from './styles';
 import { SummaryProps } from './types';
 
-const Summary: React.FC<SummaryProps> = ({ amount, date }) => {
+const SavingGoalsSummary: React.FC<SummaryProps> = ({ amount, date }) => {
   const { month, year } = getFormattedDate(date);
   const months = getMonthsDifference(new Date(), date) || 1;
   const rawAmount = getRawValue(amount.toString());
@@ -36,4 +36,4 @@ const Summary: React.FC<SummaryProps> = ({ amount, date }) => {
   );
 };
 
-export default Summary;
+export default SavingGoalsSummary;
